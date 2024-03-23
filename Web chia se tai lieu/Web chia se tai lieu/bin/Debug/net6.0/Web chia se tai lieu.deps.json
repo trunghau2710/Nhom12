@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Web chia se tai lieu/1.0.0": {
+        "runtime": {
+          "Web chia se tai lieu.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Web chia se tai lieu/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
