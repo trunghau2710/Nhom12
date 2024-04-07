@@ -1,0 +1,115 @@
+﻿
+
+
+@model IEnumerable<Web_chia_se_tai_lieu.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    int i = 0;
+}
+
+<form>
+    <style>
+        td {
+            border-right: 1px solid black;
+            border-left: 1px solid black
+        }
+    </style>
+
+    <h2>Index</h2>
+    <dev>
+        <button class=" btn btn-outline-success"><a href="https://localhost:44367/aproduct/add" class="text-decoration-none"> Thêm</a></button>
+    </dev>
+    <table class="table">
+        <tr>
+            <th>STT</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>View</th>
+            <th>DowLoad</th>
+            <th>Like</th>
+            <th>Point</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            i++;
+            var point = (item.Downloads + (item.Views * 0.1) + item.Likes * 0.5);
+            <tr>
+                <td class="align-self-center">@i</td>
+                <td class="align-self-center">@item.Id</td>
+                <td class="align-self-center">@item.Name</td>
+                <td class="align-self-center">@item.Price</td>
+                <td class="align-self-center">@item.CategoryId</td>
+                <td class="align-self-center">@item.Views</td>
+                <td class="align-self-center">@item.Downloads</td>
+                <td class="align-self-center">@item.Likes</td>
+                <td class="align-self-center">@point</td>
+                <td id="status" class="align-self-center">@item.Status</td>
+                <!--
+                <td>@item.FileImage</td>
+                <td>@item.File</td>
+                -->
+
+                <th>
+                    
+                    
+                    @if (item.Status == "Đã Duyệt" || item.Status == "Confirmed")
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-decoration-none" onclick="conFirm (event);">Delete</a>
+                    }
+                    else
+                    {
+                        <a asp-action="Confirmed" asp-route-id="@item.Id" class="text-decoration-none" onclick="conFirm(event); ">Duyệt</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-decoration-none" onclick="conFirm (event);">Hủy</a>
+                    }
+
+
+
+                </th>
+            </tr>
+
+        }
+        <script>
+            function conFirm(event) {
+                var confirmbox =  confirm("Hành động này sẽ làm thay đổi dữ liệu !\nBạn có muốn xóa ?");
+                if (confirmbox == false)
+                    event.preventDefault();
+            }
+
+            const tdElement = document.getElementById("status");
+            const status = tdElement.textContent;
+            switch (status) {
+                case 'Đã Duyệt':
+                    tdElement.classList.add('text-success');
+                    break;
+                case 'Confirmed':
+                    tdElement.classList.add('text-success');
+                    tdElement.textContent = "Đã Duyệt";
+                    break;
+                case 'No Confirmed':
+                    tdElement.classList.add('text-warning');
+                    tdElement.textContent = "Chưa Duyệt";
+                    break;
+                case 'Cancelled':
+                    tdElement.classList.add(' text-danger');
+                    tdElement.textContent = "Đã Hủy";
+                    breadk;
+
+            }
+            alert("ssa");
+           
+            
+        </script>
+    </table>
+   
+
+</form>
+<div>
+    
+</div>
+
+

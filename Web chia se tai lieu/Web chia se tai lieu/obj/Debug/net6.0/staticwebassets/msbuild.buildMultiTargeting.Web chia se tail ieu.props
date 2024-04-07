@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Web chia se tail ieu.props" />
+</Project>

@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Web_chia_se_tai_lieu.Models.Category;
+
+@{
+    ViewBag.Title = "Add Category";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<h2>Add Category</h2>
+
+<form asp-action="Add"  enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="Name">Category Name</label> 
+            <input type="text" class="form-control" asp-for="Name" placeholder="Ten Danh muc"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="Image">Category Image</label> 
+            <input type="file" asp-for="Image" id="Image" class="form-control" />
+            <img id="imgPreview" style="max-width: 100px;margin: 10px 0"/>
+        </div>
+   
+    </div>
+    
+    <button type="submit" class="btn-outline-success">Add</button>
+    
+</form>
+<script>
+    const fileInput = document.getElementById('Image');
+
+    // Thêm event listener cho sự kiện change
+    fileInput.addEventListener('change', (e) => {
+        // Lấy file được chọn
+        const file = e.target.files[0];
+
+        // Khởi tạo FileReader
+        const reader = new FileReader();
+
+        // Thêm event listener cho sự kiện load
+        reader.addEventListener('load', (e) => {
+            // Lấy URL của ảnh
+            const imgUrl = e.target.result;
+
+            // Hiển thị ảnh
+            const img = document.getElementById('imgPreview');
+            img.src = imgUrl;
+        });
+
+        // Đọc file
+        reader.readAsDataURL(file);
+    });
+</script>
