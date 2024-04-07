@@ -1,0 +1,4 @@
+//Lệnh chạy trong console kết nối database
+// Thay đổi 1 số chi tiết 
+
+Scaffold-DbContext "Data Source=[Tên server database];Initial Catalog=[tên database];Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False" Microsoft.EntityFrameworkCore.SqlServer - OutputDir Models
