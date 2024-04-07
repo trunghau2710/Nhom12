@@ -216,8 +216,13 @@
 }
 
 .page {
+<<<<<<< HEAD
     max-width: 1200px;
     margin: 85px auto;
+=======
+  max-width: 1200px;
+  margin: 85px auto;
+>>>>>>> bcd7ffd9db5a12d99834eb0dc635c5f3d9f2fca2
 }
 
 .navm {
