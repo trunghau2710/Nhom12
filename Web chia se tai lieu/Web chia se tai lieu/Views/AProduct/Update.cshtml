@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Web_chia_se_tai_lieu.Models.Product;
+
+<div>
+    <form asp-action="Update" enctype="multipart/form-data" method="post">
+        <input type="hidden" asp-for="Id"/>
+        <div>
+            <label asp-for="Name" ></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </form>
+</div>

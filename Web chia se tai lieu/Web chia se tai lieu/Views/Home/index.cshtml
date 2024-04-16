@@ -1,20 +1,24 @@
 @{
-
+    
 }
 @model Web_chia_se_tai_lieu.Models.Product;
+@using Web_chia_se_tai_lieu.Models.Home;
 
-
+<script src="/lib/jquery/dist/jquery.js"></script>
 <link href="/css/style.css" rel="stylesheet"/>
+
+
 
 <div class="page" >
     <div class="navm">
         <div class="navm-item text-danger" style="font-weight:bold;" >HOT</div>
-        @foreach(var product in ViewBag.Products_asc)
+        @foreach(var product in ViewBag.Products_top)
         {
-            <div class="navm-item" style="min-width: 100px;"><a href="" title="@product.Name">@product.Name (@product.Price)</a></div>
+            <div class="navm-item" style="min-width: 100px;"><a href="" title="@product.Name">@product.Name</a></div>
         }
         
     </div>
+    
     <div class="home">
         <div class="home__topic">
             <div class="home__topic-title">Các chủ đề chính</div>
@@ -58,291 +62,83 @@
     <div class="home__product">
         <div class="home__product-list">
             <div class="home__product-list-title item-space">
-                <a href="">Tai Lieu Co Phi</a>
+                <a id="List-Title" href="">Tai Lieu Co Phi</a>
                 <div class="home__product-list-category">
-                    <div class="category-name category1 chon">Co Phi</div>
-                    <div class="category-name">Mien Phi</div>
-                    <div class="category-name category3">Moi Up</div>
+                    <div id="premium" class="category-name category1 color" onclick="Reload1()">Co Phi</div>
+                    <div id="free" class="category-name color" onclick="Reload2()">Mien Phi</div>
+                    <div id="new" class="category-name category3 color" onclick="Reload3()">Moi Up</div>
                 </div>
             </div>
 
-            <div class="home__product-list-card">
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-solid fa-file-pdf icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-regular fa-file-word icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-regular fa-file-word icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-regular fa-file-word icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-regular fa-file-word icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-regular fa-file-word icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-solid fa-file-pdf icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-solid fa-file-pdf icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-solid fa-file-pdf icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-solid fa-file-pdf icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__product-card">
-                    <a href="">
-                        <div class="home__product-card-image">
-                            <img src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
-                            <i class="bi bi-gem icon-pre"></i>
-                            <i class="fa-solid fa-file-pdf icon-type-document"></i>
-                        </div>
-                    </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="">Đây là một đoạn văn bản dài.</a></div>
-
-                    <div class="home__product-card-detail">
-                        <div class="date">
-                            <i class="bi bi-calendar3"> 27/10/2019</i>
-                        </div>
-                        <div class="user">
-                            <i class="bi bi-person-up"> Trunghau</i>
-                        </div>
-                        <div class="view">
-                            <i class="bi bi-eye"> 1520</i>
-                        </div>
-                        <div class="download">
-                            <i class="bi bi-download"> 188</i>
-                        </div>
-                    </div>
-                </div>
+            <div id="Top" class="home__product-list-card" >
+                
+              
             </div>
+            <script>
+                const arr = ["premium", "free", "new"];
+                function Load_color(string){
+                    const getElement = document.getElementById(string);
+                    console.log(string);
+                    arr.forEach((element)=>{
+                        if (element == string)
+                            getElement.classList.replace("color", "chon");
+                        else {
+                            document.getElementById(element).classList.replace("chon", "color");
+                        }
+                    });
+                    
+                }
+                
+                
+                $.ajax({
+                    url: "/Home/Load_homePartial",
+                    success: function (data) {
+                        // Cập nhật nội dung Partial View
+                        $("#Top").html(data);
+                    }
+                });
+                Load_color("premium");
+
+                function Reload1() {
+                    Load_color("premium");
+                    $.ajax({
+                        url: "/Home/Load_homePartial",
+                        success: function (data) {
+                            // Cập nhật nội dung Partial View
+                            $("#Top").html(data);
+                        }
+                    });
+                    const getTitle = document.getElementById("List-Title");
+                    getTitle.innerHTML = "Tài Liệu Có Phí";
+                }
+                function Reload2() {
+                    Load_color("free");
+                    $.ajax({
+                        url: "/Home/Load_homePartial1",
+                        success: function (data) {
+                            // Cập nhật nội dung Partial View
+                            $("#Top").html(data);
+                        }
+                    });
+                    const getTitle = document.getElementById("List-Title");
+                    getTitle.innerHTML = "Tài Liệu Miễn Phí";
+
+                    
+                }
+                function Reload3() {
+                    Load_color("new");
+                    $.ajax({
+                        url: "/Home/Load_homePartial2",
+                        success: function (data) {
+                            // Cập nhật nội dung Partial View
+                            $("#Top").html(data);
+                        }
+                    });
+                    const getTitle = document.getElementById("List-Title");
+                    getTitle.innerHTML = "Tài Liệu Mới Đăng t";
+
+                }
+            </script>
         </div>
 
         <div class="home__product-list">
@@ -384,7 +180,7 @@
 
                         <div class="home__product-card-detail">
                             <div class="date">
-                                <i class="bi bi-calendar3"> @product.TimeCreate.ToShortDateString()</i>
+                                <i class="bi bi-calendar3"> @product.TimePost.ToShortDateString()</i>
                             </div>
                             <div class="user">
                                 <i class="bi bi-person-up"> @user.Name</i>
@@ -879,6 +675,7 @@
             </div>
         </div>
     </div>
-
+    
 </div>
+
 

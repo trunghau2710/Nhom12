@@ -209,6 +209,10 @@
       "PackagePath": "staticwebassets\\Images\\Trang Thông Tin.png"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\depositphotos_652763588-stock-photo-one-man-young-adult-caucasia_5n.jpg",
+      "PackagePath": "staticwebassets\\Images\\depositphotos_652763588-stock-photo-one-man-young-adult-caucasia_5n.jpg"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\thong tin sach.png",
       "PackagePath": "staticwebassets\\Images\\thong tin sach.png"
     },
@@ -233,8 +237,16 @@
       "PackagePath": "staticwebassets\\file\\Báo cáo tuần 1.docx"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Báo-cáo-tuần-3.docx",
+      "PackagePath": "staticwebassets\\file\\Báo-cáo-tuần-3.docx"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2.docx",
       "PackagePath": "staticwebassets\\file\\Nội dung tóm tắt tuần 2.docx"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-2024-members-638472339020576397-course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-202_54.pdf",
+      "PackagePath": "staticwebassets\\file\\course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-2024-members-638472339020576397-course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-202_54.pdf"
     },
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\js\\site.js",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iCHG8ADFqUM5EOVUapazCJ7cMaj3MkngeQnuKtawuxs=",
+  "Hash": "6IqnWNZFLMgAhLNWmSeEmgA1pyVeYbRohAmMUsQHi3Q=",
   "Source": "Web chia se tail ieu",
   "BasePath": "_content/Web chia se tail ieu",
   "Mode": "Default",
@@ -867,6 +867,40 @@
       "OriginalItemSpec": "wwwroot\\file\\Bao_cao_do_an.docx"
     },
     {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Báo-cáo-tuần-3.docx",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "file/Báo-cáo-tuần-3.docx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\file\\Báo-cáo-tuần-3.docx"
+    },
+    {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-2024-members-638472339020576397-course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-202_54.pdf",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "file/course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-2024-members-638472339020576397-course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-202_54.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\file\\course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-2024-members-638472339020576397-course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-202_54.pdf"
+    },
+    {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2.docx",
       "SourceId": "Web chia se tail ieu",
       "SourceType": "Discovered",
@@ -899,6 +933,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\1835326728.jpg"
+    },
+    {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\depositphotos_652763588-stock-photo-one-man-young-adult-caucasia_5n.jpg",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "Images/depositphotos_652763588-stock-photo-one-man-young-adult-caucasia_5n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\depositphotos_652763588-stock-photo-one-man-young-adult-caucasia_5n.jpg"
     },
     {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Index.png",

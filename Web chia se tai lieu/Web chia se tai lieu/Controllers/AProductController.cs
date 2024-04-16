@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
 using Web_chia_se_tai_lieu.Models;
+using System.IO;
 
 namespace Web_chia_se_tai_lieu.Controllers
 {
@@ -43,6 +44,14 @@ namespace Web_chia_se_tai_lieu.Controllers
             return View(products);
         }
 
+        public int GetIdProduct()
+        {
+            int i = 0;
+            foreach (var x in _context.Products)
+                i = x.Id;
+            return i;
+        }
+
         public IActionResult Add ()
         {
             
@@ -67,17 +76,20 @@ namespace Web_chia_se_tai_lieu.Controllers
             ModelState.Remove("Category");
             ModelState.Remove("User");
             
+            int id = GetIdProduct() + 1;
+
             if (ImageUrl != null)
             {
-                product.FileImage = SaveImage(ImageUrl);
+                product.FileImage = SaveImage(ImageUrl,id);
             }
             if (FileUrl != null)
             {
-                product.File = SaveFile(FileUrl);
+                product.File = SaveFile(FileUrl, id);
                 product.TypeFile = Path.GetExtension(FileUrl.FileName);
             }
             if (ModelState.IsValid)
             {
+                product.User = _context.Users.FirstOrDefault(p => p.Id == 1);
                 product.Status = "No Confirm";
                 product.UserId = 1;
                 product.Views = 0;
@@ -94,18 +106,76 @@ namespace Web_chia_se_tai_lieu.Controllers
              
            
         }
-        public string SaveImage(IFormFile Image)
+
+        public IActionResult Update(int id)
         {
-            var savePath = Path.Combine("wwwroot/Images", Image.FileName);
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            var categories = _context.Categories.ToList();
+            ViewBag.categories = new SelectList(categories, "Id", "Name");
+            return View(product);
+        }
+        [HttpPost]
+        public IActionResult Update(int id, Product product, IFormFile ImageUrl, IFormFile FileUrl) 
+        {
+            ModelState.Remove("File");
+            ModelState.Remove("FileImage");
+            ModelState.Remove("Category");
+            ModelState.Remove("User");
+
+            
+            if(ImageUrl != null)
+            {
+                product.FileImage = SaveImage(ImageUrl, id);
+            }
+            if( FileUrl != null)
+            {
+                product.File = SaveFile(FileUrl, id);
+                product.TypeFile = Path.GetExtension(FileUrl.FileName);
+            }
+            if(ModelState.IsValid)
+            {
+                var existProduct =  _context.Products.FirstOrDefault(product => product.Id == id);
+                if (existProduct != null)
+                {
+                    existProduct.Name = product.Name;
+                    existProduct.Description = product.Description;
+                    existProduct.CategoryId = product.CategoryId;
+                    existProduct.TimeCreate = product.TimeCreate;
+                    existProduct.Price = product.Price;
+                    existProduct.File = product.File;
+                    existProduct.FileImage = product.FileImage;
+                    existProduct.Views = product.Views;
+                    existProduct.Likes = product.Likes;
+                    existProduct.Downloads = product.Downloads;
+                    existProduct.Status = "No Confirm";
+                    existProduct.TypeFile = product.TypeFile;
+                    _context.Products.Update(existProduct);
+                    _context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+
+            var categories = _context.Categories;
+            ViewBag.Categories = new SelectList("categories", "Id", "Name");
+            return View(product);
+
+        }
+        public string SaveImage(IFormFile Image, int id)
+        {
+            int index = Image.FileName.IndexOf(".");
+            var filename = Image.FileName.Insert(index - 1, "_" + id.ToString());
+            var savePath = Path.Combine("wwwroot/Images",filename);
             using (var fileStream = new FileStream(savePath, FileMode.Create))
             {
                 Image.CopyTo(fileStream);
             }
             return "/Images/" + Image.FileName;
         }
-        public string SaveFile(IFormFile FileUrl)
+        public string SaveFile(IFormFile FileUrl, int id)
         {
-            var savePath = Path.Combine("wwwroot/file", FileUrl.FileName);
+            int index =  FileUrl.FileName.IndexOf(".");
+            var filename = FileUrl.FileName.Insert(index - 1, "_" + id.ToString());
+            var savePath = Path.Combine("wwwroot/file", filename);
             using (var fileStream = new FileStream(savePath, FileMode.Create))
             {
                 FileUrl.CopyTo(fileStream);
@@ -123,6 +193,9 @@ namespace Web_chia_se_tai_lieu.Controllers
             }
             else
             {
+                var category = _context.Categories.FirstOrDefault(c => c.Id == product.CategoryId);
+                category.NumberOfProduct += 1;
+                
                 product.Status = "Confirmed";
                 product.TimePost = DateTime.Now;
                 _context.SaveChanges();
@@ -145,6 +218,14 @@ namespace Web_chia_se_tai_lieu.Controllers
             return RedirectToAction("Index");
         }
 
+        public void DeleteFile (string FileUrl)
+        {
+            var filePath = ("wwwroot"+ FileUrl);
+            if(System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
+        }
 
         public IActionResult Delete(int id) 
         {
@@ -155,6 +236,8 @@ namespace Web_chia_se_tai_lieu.Controllers
             }
             else
             {
+                DeleteFile(product.File);
+                DeleteFile(product.FileImage);
                 _context.Products.Remove(product);
                 _context.SaveChanges();
             }

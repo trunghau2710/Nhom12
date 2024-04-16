@@ -1,0 +1,154 @@
+﻿
+<link href="/css/style.css" rel="stylesheet" />
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using React.AspNet;
+@model IEnumerable<Web_chia_se_tai_lieu.ViewModels.ProductVM>;
+
+
+<div class="page page-product">
+    <div class="product__menu">
+        <div class="home__topic-title">DANH MUC TAI LIEU</div>
+        <div class="product__menu-items"> 
+            @foreach( var category in ViewBag.Categories)
+            {
+                
+                @if(category.Id.ToString() == ViewData["id"].ToString() )
+                {
+                    <a asp-action="Product" asp-route-id="@category.Id" class="text-decoration-none">
+                        <div class="product__menu-item" style="background-color: #66ccff;">
+                            <h6 style="">@category.Name</h6>
+                            <h6 class="text-danger">(@category.NumberOfProduct)</h6>
+                            <h6>@ViewData["id"]</h6>
+                        </div>
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Product" asp-route-id="@category.Id" class="text-decoration-none">
+                        <div class="product__menu-item">
+                            <h6 style="">@category.Name</h6>
+                            <h6 class="text-danger">(@category.NumberOfProduct)</h6>
+                        </div>
+                    </a>
+                }
+                
+                
+            }
+
+        </div>
+    </div>
+    <div class="product__list">
+        <div class="product__list-title">@ViewData["Category Name"]</div>
+        <div id="test">Hello</div>
+        <div class="product__list-items" >
+            <div class="product__list-head">
+                <div class="tool-sort">
+                    Sắp xếp:
+                    <select  id="Select1">
+                        <option value="value1">Nội bật</option>
+                        <option value="value2">Xem nhiều</option>
+                        <option value="value3">Mới đăng</option>
+                    </select>
+                    <select  id="Select2">
+                        <option value="value4">Tất cả</option>
+                        <option value="value5">Miễn phí</option>
+                        <option value="value6">Có phí</option>
+                    </select>
+                    <button type="submit" onclick="Reload_product('1')" >Xác nhận</button>
+                </div>
+            </div>
+            <div id="list" class="product__list-body" onload="Reload_product()">
+                
+               
+            </div>
+            <script>
+                var select1 = $("#Select1").val();
+                var select2 = $("#Select2").val();
+                var id = @ViewData["id"];
+                var page = 1;
+
+
+                console.log("id");
+                $.ajax({
+                    url: "/Home/Load_productPartial",
+                    data: {
+                        option1: select1,
+                        option2: select2,
+                        id, page
+                    },
+
+                    success: function (data) {
+                        $("#list").html(data);
+                    }
+                })
+            </script>
+            <div class="d-flex">
+                <button class="btn btn-secondary">Prev</button>
+                @{
+                    var x = ViewBag.Pages;
+                }
+                @for(int i =1; i<= x; i++)
+                {
+                    <button type="submit"  onclick="Reload_product('@i')">@i</button>
+                }
+                <button class="btn btn-secondary">Next</button>
+            </div>
+            <button class="btn btn-secondary  btn-end">Xem them</button>
+        </div>
+    </div>
+    
+</div>
+<script>
+    var test = document.getElementById("test");
+    test.innerHTML = "Hi !";
+    console.log("Hello");
+
+
+    
+
+    function Reload_product(value) {
+        var select1 = $("#Select1").val();
+        var select2 = $("#Select2").val();
+        var id = @ViewData["id"];
+        var page = parseInt(value);
+        
+        console.log("id");
+        $.ajax({
+            url: "/Home/Load_productPartial",
+            data: {
+                option1: select1,
+                option2: select2,
+                id, page
+            },
+
+            success: function (data) {
+                $("#list").html(data);
+            }
+        })
+    }/*
+                    $(document).ready(function () {
+                        $("#Select1", "#Select2").change(function () {
+                            var select1 = $("#Select1").val();
+                            var select2 = $("#Select2").val();
+
+                            $.ajax({
+                                url: "Home/Load_productPartial",
+                                data: {
+                                    option1: select1,
+                                    option2: select2
+                                },
+
+                                success: function (data) {
+                                    $("#list").html(data);
+                                }
+                            });
+                        });
+                    });
+                    */
+    
+
+</script>

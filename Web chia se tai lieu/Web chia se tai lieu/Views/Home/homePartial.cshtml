@@ -1,0 +1,110 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using Web_chia_se_tai_lieu.Models;
+@model IEnumerable<Web_chia_se_tai_lieu.ViewModels.ProductVM>;
+
+
+
+    @if(Model == null)
+    {
+        @foreach (var item in ViewBag.Action_Premium)
+        {
+        
+            <div>
+                <div class="home__product-card">
+                    <a href="">
+                        <div class="home__product-card-image">
+                            <img src="@item.FileImage" alt="">
+                            @if (item.Price > 0)
+                            {
+                                <i class="bi bi-gem icon-pre"></i>
+                            }
+                            @if (item.TypeFile == ".pdf" || item.TypeFile == "pdf")
+                            {
+                                <i class="fa-solid fa-file-pdf icon-type-document"></i>
+                            }
+                            @if (item.TypeFile == ".docx" || item.TypeFile == "doc")
+                            {
+                                <i class="fa-solid fa-file-word icon-type-document"></i>
+                            }
+
+                        </div>
+                    </a>
+                    <div class="home__product-card-name"><a class="tag-link" href="@item.Name">@item.Name</a></div>
+
+                    <div class="home__product-card-detail">
+                        <div class="date">
+                            <i class="bi bi-calendar3"> @item.TimePost?.ToShortDateString()</i>
+                        </div>
+                        <div class="user">
+                            <i class="bi bi-person-up"> @item.User.Id</i>
+                        </div>
+                        <div class="view">
+                            <i class="bi bi-eye"> @item.Views</i>
+                        </div>
+                        <div class="download">
+                            <i class="bi bi-download"> @item.Downloads</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+
+        
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            
+            <div class="home__product-card">
+                <a href="">
+                    <div class="home__product-card-image">
+                        <img src="@item.FileImage" alt="">
+                        @if (item.Price > 0)
+                        {
+                            <i class="bi bi-gem icon-pre"></i>
+                        }
+                        @if (item.TypeFile == ".pdf" || item.TypeFile == "pdf")
+                        {
+                            <i class="fa-solid fa-file-pdf icon-type-document"></i>
+                        }
+                        @if (item.TypeFile == ".docx" || item.TypeFile == "doc")
+                        {
+                            <i class="fa-solid fa-file-word icon-type-document"></i>
+                        }
+
+                    </div>
+                </a>
+                <div class="home__product-card-name"><a class="tag-link" href="@item.Name">@item.Name</a></div>
+
+                <div class="home__product-card-detail">
+                    <div class="date">
+                        <i class="bi bi-calendar3"> @item.TimePost?.ToShortDateString()</i>
+                    </div>
+                    <div class="user">
+
+                        <i class="bi bi-person-up"> @item.UserName</i>
+
+
+                    </div>
+                    <div class="view">
+                        <i class="bi bi-eye"> @item.Views</i>
+                    </div>
+                    <div class="download">
+                        <i class="bi bi-download"> @item.Downloads</i>
+                    </div>
+                </div>
+            </div>
+        
+        
+            
+
+        
+        }
+    }
+   

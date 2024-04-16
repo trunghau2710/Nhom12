@@ -1,0 +1,79 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Web_chia_se_tai_lieu.ViewModels.ProductVM>;
+
+ 
+@if(Model != null)
+{
+    @foreach(var item in Model)
+    {
+        <div class="body-item">
+            <div class="title">
+                <a class="tag-link" href="">@item.Name</a>
+            </div>
+            <div class="content">
+                <a href="">
+                    <img src="@item.FileImage" alt="@item.Name">
+                </a>
+                <div class="content-right">
+                    <div style="max-height: 85px; overflow: hidden; text-overflow: ellipsis;">
+                        <p style="font-size: 14px; ">@item.Description</p>
+                    </div>
+                    <div class="content-detail">
+                        <div>
+                            @if(item.TypeFile == ".pdf")
+                            {
+                                <i class="fa-solid fa-file-pdf "></i>
+                            }else{
+                                <i class="fa-solid fa-file-word "></i>
+                            }
+                            
+                            <i class="bi bi-person-fill-up text-danger">@item.UserName</i>
+                            <i class="bi bi-calendar3">@item.TimePost?.ToShortDateString()</i>
+                            <i class="bi bi-eye"> @item.Views</i>
+                            @if(item.Price > 0)
+                            {
+                                <i class="bi bi-coin text-danger">@item.Price</i>
+                            }
+                            <i class="bi bi-download"> @item.Downloads</i>
+                            
+                        </div>
+                        <button class="btn-success">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+else
+    {
+        <div class="body-item">
+            <div class="title">
+                <a class="tag-link" href="">Công Nghệ Thông Tin</a>
+            </div>
+            <div class="content">
+                <a href="">
+                    <img src="https://tailieu.vn/image/document/thumbnail/collection/240x160/0-671_1710487185.jpg" alt="">
+                </a>
+                <div class="content-left">
+                    <div style="max-height: 85px; overflow: hidden; text-overflow: ellipsis;">
+                        <p style="font-size: 14px; ">Đây là nội dung của tài liệu này| Để hệ thống lại kiến thức cũ, trang bị thêm kiến thức mới, rèn luyện kỹ năng giải đề nhanh và chính xác cũng như thêm tự tin hơn khi bước vào kì thi tốt nghiệp THPT sắp đến, mời các bạn học sinh cùng tham khảo “Đề thi thử tốt nghiệp THPT môn Tiếng Anh năm 2023-2024 - Sở GD&ĐT Thanh Hóa” làm tài liệu để ôn tập. Chúc các bạn làm bài kiểm tra tốt! Cùng tham khảo “Đề thi học kì 1 môn GDCD lớp 8 năm 2023-2024 có đáp án - Trường THCS Nguyễn Bỉnh Khiêm, Phú Ninh” giúp các em ôn tập lại các kiến thức đã học, đánh giá năng lực làm bài của mình và chuẩn bị cho kì thi được tốt hơn với số điểm cao như mong muốn. Chúc các em thi tốt!</p>
+                    </div>
+                    <div class="content-detail">
+                        <div>
+                            <i class="fa-solid fa-file-pdf "></i>
+                            <i class="bi bi-person-fill-up text-danger">Trung Hau</i>
+                            <i class="bi bi-calendar3">17/3/2024</i>
+                            <i class="bi bi-eye"> 1520</i>
+                            <i class="bi bi-coin text-danger">10</i>
+                        </div>
+                        <button class="btn-success">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
