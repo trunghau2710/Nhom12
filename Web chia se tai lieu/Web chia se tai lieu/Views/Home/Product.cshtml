@@ -4,6 +4,7 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var pages = 1;
 }
 @using React.AspNet;
 @model IEnumerable<Web_chia_se_tai_lieu.ViewModels.ProductVM>;
@@ -15,9 +16,12 @@
         <div class="product__menu-items"> 
             @foreach( var category in ViewBag.Categories)
             {
-                
-                @if(category.Id.ToString() == ViewData["id"].ToString() )
+
+                @if (category.Id.ToString() == ViewData["id"].ToString() && ViewData["id"] != null)
                 {
+
+                    pages = (category.NumberOfProduct/6) + 1;
+                    var h = pages;
                     <a asp-action="Product" asp-route-id="@category.Id" class="text-decoration-none">
                         <div class="product__menu-item" style="background-color: #66ccff;">
                             <h6 style="">@category.Name</h6>
@@ -58,57 +62,43 @@
                         <option value="value5">Miễn phí</option>
                         <option value="value6">Có phí</option>
                     </select>
-                    <button type="submit" onclick="Reload_product('1')" >Xác nhận</button>
+                    <button type="submit" onclick="  Reload_Click()">Xác nhận</button>
                 </div>
             </div>
             <div id="list" class="product__list-body" onload="Reload_product()">
-                
-               
             </div>
-            <script>
-                var select1 = $("#Select1").val();
-                var select2 = $("#Select2").val();
-                var id = @ViewData["id"];
-                var page = 1;
-
-
-                console.log("id");
-                $.ajax({
-                    url: "/Home/Load_productPartial",
-                    data: {
-                        option1: select1,
-                        option2: select2,
-                        id, page
-                    },
-
-                    success: function (data) {
-                        $("#list").html(data);
-                    }
-                })
-            </script>
-            <div class="d-flex">
-                <button class="btn btn-secondary">Prev</button>
-                @{
-                    var x = ViewBag.Pages;
-                }
-                @for(int i =1; i<= x; i++)
-                {
-                    <button type="submit"  onclick="Reload_product('@i')">@i</button>
-                }
+            <div class="d-flex justify-content-center" style="margin: 10px 0;">
+                <button class="btn btn-secondary">Priv</button>
+                <div id="pages" style="margin: 0 8px;" class="">
+                </div>
                 <button class="btn btn-secondary">Next</button>
             </div>
+            
+           
+           
+            
             <button class="btn btn-secondary  btn-end">Xem them</button>
         </div>
     </div>
     
 </div>
 <script>
-    var test = document.getElementById("test");
-    test.innerHTML = "Hi !";
-    console.log("Hello");
-
-
+    async function Reload_Click(){
+        const promise = new Promise((resolve) => {
+            Reload_product(1);
+            resolve();
+        });
+        await promise;  
+        Reload_Pages();        
+    }
     
+    
+    $(document).ready(function () {
+        Reload_product(1);
+        Reload_Pages(1);
+        
+    })
+
 
     function Reload_product(value) {
         var select1 = $("#Select1").val();
@@ -116,7 +106,7 @@
         var id = @ViewData["id"];
         var page = parseInt(value);
         
-        console.log("id");
+       
         $.ajax({
             url: "/Home/Load_productPartial",
             data: {
@@ -128,8 +118,30 @@
             success: function (data) {
                 $("#list").html(data);
             }
-        })
-    }/*
+        }); 
+    };
+   
+    function Reload_Pages(value) {
+        var select1 = $("#Select1").val();
+        var select2 = $("#Select2").val();
+        var id = @ViewData["id"];
+        var page = parseInt(value);
+        $.ajax({
+            url: "/Home/Load_pagePartial",
+            data: {
+                option1: select1,
+                option2: select2,
+                id, page
+            },
+            success: function (data) {
+                $("#pages").html(data);
+            }
+        });
+    };
+    
+    /*
+     
+
                     $(document).ready(function () {
                         $("#Select1", "#Select2").change(function () {
                             var select1 = $("#Select1").val();

@@ -50,20 +50,24 @@ public partial class WebtailieuContext : DbContext
 
         modelBuilder.Entity<Comment>(entity =>
         {
-            entity.HasKey(e => new { e.UserId, e.ProductId }).HasName("PK__Comment__DCC80020619F58EB");
+            entity.HasKey(e => e.Id).HasName("PK__Comment__3214EC075CC9CFBC");
 
             entity.ToTable("Comment");
 
             entity.Property(e => e.Content).HasColumnType("ntext");
-            entity.Property(e => e.TimeCreate).HasColumnType("datetime");
+            entity.Property(e => e.ProductId).HasColumnName("productId");
+            entity.Property(e => e.TimeCreate).HasColumnType("date");
+            entity.Property(e => e.UserId).HasColumnName("userId");
 
             entity.HasOne(d => d.Product).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__Comment__Product__6A30C649");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Comment__product__3C34F16F");
 
             entity.HasOne(d => d.User).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Comment__UserId__693CA210");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Comment__userId__3D2915A8");
         });
 
         modelBuilder.Entity<InvoiceCoin>(entity =>

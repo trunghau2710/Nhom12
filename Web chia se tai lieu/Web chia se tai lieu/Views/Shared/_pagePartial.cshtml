@@ -1,0 +1,112 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model int;
+@{
+    string tmp = ViewData["page"].ToString();
+    int page = int.Parse(tmp);
+    int page_before = page - 2;
+}
+
+<style>
+    .btn-click{
+        background-color: blue;
+        font-weight: bold;
+    }
+</style>
+<div class="d-flex justify-content-center ">
+    
+    @if(Model <= 5 )
+    {
+        @for (int i = 1; i <= Model; i++)
+        {
+            if (i == page)
+            {
+                <button id="page_start" style="padding: 0 5px;" class="btn " type="submit" onclick="Click(event, @i)">@i</button>
+            }
+            else
+            {
+                <button class="btn" style="padding: 0 5px;" type="submit" onclick="Click(event, @i)">@i</button>
+            }
+        }
+        <div> ... </div>
+        <button class="btn" style="padding: 0 5px;" type="submit" onclick="Click(event,@Model)">@Model</button>
+    }
+    else
+    {
+        if(page == 1)
+        {
+            @for (int i = 1; i <= 5; i++)
+            {
+                if (i == page)
+                {
+                    <button id="page_start" style="padding: 0 5px;" class="btn " type="submit" onclick="Click(event, @i)">@i</button>
+                }
+                else
+                {
+                    <button class="btn" style="padding: 0 5px;" type="submit" onclick="Click(event, @i)">@i</button>
+                }
+            }
+            <div> ... </div>
+            <button class="btn" style="padding: 0 5px;" type="submit" onclick="Click(event,@Model)">@Model</button>
+        }
+        else
+        {
+             int page_next = ((page + 5)> Model)? Model : page+ 5;
+        int t = page_next;
+        @for(int i = page - 2; i<= page_next; i++)
+        {
+            if( i == page)
+            {
+                <button id="" class="btn btn-success" style="padding: 0 5px;" type="submit" onclick="Click(event,@i)">@i</button>
+            }
+            else
+            {
+                <button class="btn" style="padding: 0 5px;" type="submit" onclick="Click(event,@i)">@i</button>
+            }
+        }
+        <div> ... </div>
+        <button class="btn" style="padding: 0 5px;" type="submit" onclick="Reload_product(@Model)">@Model</button>
+        }
+       
+    }
+
+    <script>
+        /*
+        function Click() {
+
+            const elements = document.getElementsByClassName("btn");
+            for (let element of elements) {
+                element.addEventListener('click', function () {
+                    element.classList.add("btn-click");
+                    for (let element1 of elements) {
+                        if (element1.classList.contains("btn-click") && element1 !== this) {
+                            element1.classList.remove("btn-click");
+                        }
+                    }
+                });
+            }
+        }
+        */
+        const page_start = document.getElementById("page_start");
+        page_start.classList.add("btn-success");
+
+        function Click(event, i) {
+            Reload_product(i);
+            
+            event.target.classList.add("btn-success");
+            const elements = document.getElementsByClassName("btn");
+            for (let element of elements) {
+                if (element !== event.target && element.classList.contains("btn-success")) {
+                    element.classList.remove("btn-success");
+                }
+            }
+            if(i % 5 == 0)
+                Reload_Pages(i);
+        }
+        
+
+    </script>
+</div>
+

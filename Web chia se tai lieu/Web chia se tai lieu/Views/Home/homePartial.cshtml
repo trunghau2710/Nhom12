@@ -16,7 +16,7 @@
         
             <div>
                 <div class="home__product-card">
-                    <a href="">
+                    <a asp-action="Detail" asp-route-id="@item.Id">
                         <div class="home__product-card-image">
                             <img src="@item.FileImage" alt="">
                             @if (item.Price > 0)
@@ -34,7 +34,7 @@
 
                         </div>
                     </a>
-                    <div class="home__product-card-name"><a class="tag-link" href="@item.Name">@item.Name</a></div>
+                    <div class="home__product-card-name"><a class="tag-link" title="@item.Name" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></div>
 
                     <div class="home__product-card-detail">
                         <div class="date">
@@ -62,7 +62,7 @@
         {
             
             <div class="home__product-card">
-                <a href="">
+            <a asp-action="Detail" asp-route-id="@item.Id" title="@item.Name">
                     <div class="home__product-card-image">
                         <img src="@item.FileImage" alt="">
                         @if (item.Price > 0)
@@ -80,7 +80,7 @@
 
                     </div>
                 </a>
-                <div class="home__product-card-name"><a class="tag-link" href="@item.Name">@item.Name</a></div>
+            <div class="home__product-card-name"><a class="tag-link" title="@item.Name" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></div>
 
                 <div class="home__product-card-detail">
                     <div class="date">

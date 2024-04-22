@@ -185,6 +185,18 @@
       "PackagePath": "staticwebassets\\Images\\1835326728.jpg"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\48d2088a53accec1ef38d5f736de56d_119.jpg",
+      "PackagePath": "staticwebassets\\Images\\48d2088a53accec1ef38d5f736de56d_119.jpg"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\48d2088a53accec1ef38d5f736de56d_139.jpg",
+      "PackagePath": "staticwebassets\\Images\\48d2088a53accec1ef38d5f736de56d_139.jpg"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\71e8c4cff047f32b6edcef32c87de79_124.jpg",
+      "PackagePath": "staticwebassets\\Images\\71e8c4cff047f32b6edcef32c87de79_124.jpg"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Index.png",
       "PackagePath": "staticwebassets\\Images\\Index.png"
     },
@@ -209,8 +221,16 @@
       "PackagePath": "staticwebassets\\Images\\Trang Thông Tin.png"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\b75ad619d59762d999a9c340a2590bf_9c.jpg",
+      "PackagePath": "staticwebassets\\Images\\b75ad619d59762d999a9c340a2590bf_9c.jpg"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\depositphotos_652763588-stock-photo-one-man-young-adult-caucasia_5n.jpg",
       "PackagePath": "staticwebassets\\Images\\depositphotos_652763588-stock-photo-one-man-young-adult-caucasia_5n.jpg"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\ed0e10a0f37f24c6d8a621ce276a5b8_10a.jpg",
+      "PackagePath": "staticwebassets\\Images\\ed0e10a0f37f24c6d8a621ce276a5b8_10a.jpg"
     },
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\thong tin sach.png",
@@ -241,8 +261,28 @@
       "PackagePath": "staticwebassets\\file\\Báo-cáo-tuần-3.docx"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
+      "PackagePath": "staticwebassets\\file\\Lab0_133.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2.docx",
       "PackagePath": "staticwebassets\\file\\Nội dung tóm tắt tuần 2.docx"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội-dung-tóm-tắt-tuần-4_Nguyễn-Lộc-Xuân-Sang_795_109.docx",
+      "PackagePath": "staticwebassets\\file\\Nội-dung-tóm-tắt-tuần-4_Nguyễn-Lộc-Xuân-Sang_795_109.docx"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội-dung-tóm-tắt-tuần-_114.docx",
+      "PackagePath": "staticwebassets\\file\\Nội-dung-tóm-tắt-tuần-_114.docx"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Phieu-theo-doi-tien-doDAC_9S.doc",
+      "PackagePath": "staticwebassets\\file\\Phieu-theo-doi-tien-doDAC_9S.doc"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\[CMP376] Giáo trình HP Thực hành Lập trình we_12b.docx",
+      "PackagePath": "staticwebassets\\file\\[CMP376] Giáo trình HP Thực hành Lập trình we_12b.docx"
     },
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-2024-members-638472339020576397-course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-202_54.pdf",

@@ -5,17 +5,17 @@
 @model IEnumerable<Web_chia_se_tai_lieu.ViewModels.ProductVM>;
 
  
-@if(Model != null)
+@if (Model != null)
 {
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <div class="body-item">
             <div class="title">
-                <a class="tag-link" href="">@item.Name</a>
+                <a class="tag-link" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a>
             </div>
             <div class="content">
-                <a href="">
-                    <img src="@item.FileImage" alt="@item.Name">
+                <a style="overflow:hidden;" asp-action="Detail" asp-route-id="@item.Id">
+                    <img src="@item.FileImage"  style="max-height: 120px;" alt="@item.Name">
                 </a>
                 <div class="content-right">
                     <div style="max-height: 85px; overflow: hidden; text-overflow: ellipsis;">
@@ -23,36 +23,50 @@
                     </div>
                     <div class="content-detail">
                         <div>
-                            @if(item.TypeFile == ".pdf")
+                            @if (item.TypeFile == ".pdf")
                             {
                                 <i class="fa-solid fa-file-pdf "></i>
-                            }else{
+                            } else {
                                 <i class="fa-solid fa-file-word "></i>
                             }
-                            
+
                             <i class="bi bi-person-fill-up text-danger">@item.UserName</i>
                             <i class="bi bi-calendar3">@item.TimePost?.ToShortDateString()</i>
                             <i class="bi bi-eye"> @item.Views</i>
-                            @if(item.Price > 0)
+                            @if (item.Price > 0)
                             {
                                 <i class="bi bi-coin text-danger">@item.Price</i>
                             }
                             <i class="bi bi-download"> @item.Downloads</i>
-                            
+
                         </div>
-                        <button class="btn-success">Download</button>
+                        @if (ViewData["userId"] == null)
+                        {
+                            <button class="btn-success" onclick="NotLogin()">Download</button>
+                        }else{
+                            
+                                <button class="btn-success"><a href="@item.File" download="@item.FileName" class="text-black text-decoration-none">Download</a></button>
+                            
+                        }
+                        
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            function NotLogin() {
+                alert("Để tải tài liệu, vui lòng đăng nhập !");
+            } 
+        </script>
     }
+
 }
 
 else
-    {
-        <div class="body-item">
-            <div class="title">
-                <a class="tag-link" href="">Công Nghệ Thông Tin</a>
+{
+    <div class="body-item">
+        <div class="title">
+                <a class="tag-link" asp-action="Detail" asp-route-id="">Công Nghệ Thông Tin</a>
             </div>
             <div class="content">
                 <a href="">

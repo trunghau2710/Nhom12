@@ -163,24 +163,24 @@ namespace Web_chia_se_tai_lieu.Controllers
         public string SaveImage(IFormFile Image, int id)
         {
             int index = Image.FileName.IndexOf(".");
-            var filename = Image.FileName.Insert(index - 1, "_" + id.ToString());
+            var filename = Image.FileName.Insert(index , "_" + id.ToString());
             var savePath = Path.Combine("wwwroot/Images",filename);
             using (var fileStream = new FileStream(savePath, FileMode.Create))
             {
                 Image.CopyTo(fileStream);
             }
-            return "/Images/" + Image.FileName;
+            return "/Images/" + filename;
         }
         public string SaveFile(IFormFile FileUrl, int id)
         {
             int index =  FileUrl.FileName.IndexOf(".");
-            var filename = FileUrl.FileName.Insert(index - 1, "_" + id.ToString());
+            var filename = FileUrl.FileName.Insert(index , "_" + id.ToString());
             var savePath = Path.Combine("wwwroot/file", filename);
             using (var fileStream = new FileStream(savePath, FileMode.Create))
             {
                 FileUrl.CopyTo(fileStream);
             }
-            return "/file/" + FileUrl.FileName;
+            return "/file/" + filename;
         }
 
        

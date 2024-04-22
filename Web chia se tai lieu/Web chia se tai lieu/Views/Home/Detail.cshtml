@@ -1,0 +1,208 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+@model Web_chia_se_tai_lieu.ViewModels.ProductVM;
+
+<script src="/lib/jquery/dist/jquery.js"></script>
+<link href="/css/style.css" rel="stylesheet" />
+
+
+
+<div class="page page-detail">
+    <div class="page-left">
+        <div class="detail__topic-top">
+            <a asp-action="Index">Trang chủ</a>
+            <i style="font-size: 14px;" class="fa-solid fa-angles-right"></i>
+            <a asp-action="Product" asp-route-id="@Model.CategoryId">@Model.CategoryName</a><a href=""></a>
+        </div>
+        <div style="margin: 10px ;"><h2 class="text-primary">@Model.Name</h2></div>
+
+        <div class="detail__detail">
+            <div class="detail-left">
+                Chia sẻ: <span class="text-danger">@Model.UserName</span>|
+                Ngày đăng: <span class="text-danger">@Model.TimePost</span>|
+                Loại File: <span>@Model.TypeFile</span>|
+                Số trang: <span>6</span>
+            </div>
+            <div class="detail-right">
+                <div class="detail-view"> <span>@Model.Views</span> <br>Lượt xem</div>
+                <div class="detail-download"><span>@Model.Downloads</span> <br>Download</div>
+            </div>
+        </div>
+
+        <div style="margin: 20px; display: flex; justify-content: center;">
+            <iframe src="@Model.File" download="false" width="720" height="560"  title="@Model.Name"></iframe>
+            
+        </div>
+        <div style="width: 100%; display: flex; justify-content: space-around; ">
+            <span class="text-danger">Vui lòng download để xem đầy đủ !</span>
+            @{
+                
+            }
+            
+            @if (ViewData["userId"] == null)
+            {
+                <button class="btn-success" onclick="NotLogin()">Download</button>
+                
+            }
+            else
+            {
+
+                <button class="btn-success"><a href="@Model.File" download="@Model.FileName" class="text-black text-decoration-none">Download</a></button>
+
+            }
+        </div>
+        <h3 style="padding-left: 20px;">Nội dung: </h3>
+        <div class="detail-content">
+            <p>@Model.Description</p>
+        </div>
+
+        <div>
+            <div class="comment">
+            </div>
+            <div id="my-element" class="list-comment"></div>
+        </div>
+    </div>
+
+    
+
+    <div class="page-right">
+        <div class="detail__banner">
+            <img src="https://i.pinimg.com/564x/8a/3a/51/8a3a51ca71ec51877411d346106c06a4.jpg" alt="">
+        </div>
+        <div class="detail__list">
+            <div class="home__topic-title"> Có thể bạn cũng muốn xem</div>
+            <div>
+                <div class="detail__list-item">
+                    @foreach (var item in ViewBag.Products_Detail)
+                    {
+
+                        <div class="list-item">
+                            <div style="display: flex; padding: 5px;">
+                                <i class="fa-solid fa-file-pdf text-danger"></i>
+                                <a class="tag-link" title="@item.Name" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a>
+                            </div>
+                            <div style="margin: auto 10px; display: flex; justify-content: center">
+                                <i class="fas fa-thumbs-up" style="font-weight:normal;"><span>@item.Likes</span></i>
+                                <i class="bi bi-eye"> @item.Views</i>
+                                <i class="bi bi-download"> @item.Downloads</i>
+                            </div>
+                        </div>
+                    }
+                <!--
+                        <div class="list-item">
+                            <div style="display: flex; padding: 5px;">
+                                <i class="fa-solid fa-file-pdf text-danger"></i>
+                                <a class="tag-link" title="Giáo trình Tiếng Anh chuyên ngành kỹ thuật phục vụ nhà hàng" href="">Giáo trình Tiếng Anh chuyên ngành kỹ thuật phục vụ nhà hàng</a>
+                            </div>
+                            <div style="margin: auto 10px; display: flex; justify-content: center">
+                                <i class="bi bi-file-earmark">200</i>
+                                <i class="bi bi-eye"> 1520</i>
+                                <i class="bi bi-download"> 188</i>
+                            </div>
+                        </div>
+                -->
+                    
+                   
+
+
+
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    
+</div>
+<script>
+    function NotLogin() {
+        alert("Để tải tài liệu, vui lòng đăng nhập !");
+    }
+   
+    
+    function Load_Comment() {
+        const UserId = 1;
+        const ProductId = @Model.Id;
+        
+        $.ajax({
+            url: "/Home/comment",
+            data: { UserId, ProductId },
+            success: function (data) {
+                $(".comment").html(data);
+            }
+        });
+    };
+    function Click(value) {
+
+        var UserId = 1;
+        var ProductId = @Model.Id;
+        $.ajax({
+            url: "/Home/Comment_process",
+            data: { UserId, ProductId, value },
+            success: function (data) {
+                (".comment").html(data);
+            }
+        });
+        $.ajax({
+            url: "/Home/CommentList",
+            data: { ProductId },
+            success: function (data) {
+                $(".list-comment").html(data);
+            }
+        });
+
+    };
+    function Load_Listcomment() {
+
+        const UserId = 1;
+        const ProductId = @Model.Id;
+        
+        $.ajax({
+            url: "/Home/CommentList",
+            data: { ProductId },
+            success: function (data) {
+                $(".list-comment").html(data);
+            }
+        });
+    };
+    function Load_Listcomment_delete(value) {
+
+        const deleteId = value;
+        const ProductId = @Model.Id;
+        $.ajax({
+            url: "/Home/CommentList_delete",
+            data: { ProductId, deleteId },
+            success: function (data) {
+                $(".list-comment").html(data);
+            }
+        });
+
+    };
+    
+    function Load(callback) {
+        setTimeout(() => {
+            
+            callback();
+        }, 100); // Thay đổi thời gian chờ nếu cần
+    
+    };
+
+   
+    Load_Comment();
+    Load_Listcomment();
+   
+    /*
+     
+
+    
+    
+    */
+</script>
+

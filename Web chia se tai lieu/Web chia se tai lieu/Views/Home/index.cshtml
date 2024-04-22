@@ -159,9 +159,9 @@
                     }
 
                     <div class="home__product-card">
-                        <a href="">
+                        <a asp-action="Detail" asp-route-id="@product.Id">
                             <div class="home__product-card-image" style="border: 1px solid red;">
-                                <img style="border: 1px solid green;" class="" src="https://media.store123doc.com/images/document/13/gu/sh/medium_lo2j0a4VTW.jpg" alt="">
+                                <img style="border: 1px solid green;" class="" src="@product.FileImage" alt="">
                                 @if(product.TypeFile == ".pdf")
                                 {
                                     <i id="icon-typefile" class="fa-solid fa-file-pdf icon-type-document"></i>

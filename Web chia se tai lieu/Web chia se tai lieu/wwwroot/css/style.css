@@ -177,7 +177,7 @@
 .form-container {
     background-color: white;
     min-height: 50px;
-    max-width: 500px;
+    max-width: 720px;
     margin: 50px auto 20px;
     border: 1px solid black;
 }
@@ -201,7 +201,7 @@
 }
 
 .form-label {
-    min-width: 80px;
+    min-width: 100px;
 }
 
 .form-input {
