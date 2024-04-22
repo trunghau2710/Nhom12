@@ -15,6 +15,8 @@ public partial class WebtailieuContext : DbContext
     {
     }
 
+    public virtual DbSet<AdminUser> AdminUsers { get; set; }
+
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Comment> Comments { get; set; }
@@ -37,6 +39,27 @@ public partial class WebtailieuContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<AdminUser>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__AdminUse__3214EC07CF3A890A");
+
+            entity.ToTable("AdminUser");
+
+            entity.HasIndex(e => e.Email, "UQ__AdminUse__A9D105346F58C6DD").IsUnique();
+
+            entity.Property(e => e.Avatar).HasMaxLength(1000);
+            entity.Property(e => e.Email)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.Name).HasMaxLength(255);
+            entity.Property(e => e.Password)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.Role)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07F5B24C48");

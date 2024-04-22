@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eH7LW5e+zoYy7Rv7gXM4lVjbw4nkdfnCXjL7jMc3UPc=",
+  "Hash": "zLAHE5zIf880gpeekQBkGQKvheSFOoDkcF5RtZFb56A=",
   "Source": "Web chia se tail ieu",
   "BasePath": "_content/Web chia se tail ieu",
   "Mode": "Default",
@@ -918,6 +918,23 @@
       "OriginalItemSpec": "wwwroot\\file\\course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-2024-members-638472339020576397-course-v1_HUTECH+ML_NDD0010876_POS105_N26+HK2A-2023-202_54.pdf"
     },
     {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\DEMO CÔNG CỤ THIẾT KẾ GIAO DIỆN_14.docx",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "file/DEMO CÔNG CỤ THIẾT KẾ GIAO DIỆN_14.docx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\file\\DEMO CÔNG CỤ THIẾT KẾ GIAO DIỆN_14.docx"
+    },
+    {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
       "SourceId": "Web chia se tail ieu",
       "SourceType": "Discovered",
@@ -933,6 +950,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\file\\Lab0_133.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
+    },
+    {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133_14.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "file/Lab0_133_14.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\file\\Lab0_133_14.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
+    },
+    {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "file/Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\file\\Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
     },
     {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2.docx",
@@ -1122,6 +1173,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\ed0e10a0f37f24c6d8a621ce276a5b8_10a.jpg"
     },
     {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Github_14.png",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "Images/Github_14.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Github_14.png"
+    },
+    {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Index.png",
       "SourceId": "Web chia se tail ieu",
       "SourceType": "Discovered",
@@ -1137,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Index.png"
+    },
+    {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\index_1_14.png",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "Images/index_1_14.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\index_1_14.png"
     },
     {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\My_WiFi_QR_Code.png",
@@ -1205,6 +1290,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\tải xuống.png"
+    },
+    {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Thiết kế trang chủ web tài liệu (figma)_15.png",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "Images/Thiết kế trang chủ web tài liệu (figma)_15.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Thiết kế trang chủ web tài liệu (figma)_15.png"
     },
     {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\thong tin sach.png",

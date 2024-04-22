@@ -1,0 +1,121 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+@model Web_chia_se_tai_lieu.ViewModels.UserVM;
+
+<script src="/lib/jquery/dist/jquery.js"></script>
+<link href="/css/style.css" rel="stylesheet" />
+
+<div class="page d-flex justify-content-center" style="min-height: 840px;">
+
+    <div class="form-container" style="margin: auto; min-width: 640px">
+        <div class="topic">Form Dang Ký</div>
+        <form asp-action="Register" class="form" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <labe class="form-label">Tên:</labe>
+                <input asp-for="Name" class="form-input" type="Text"></input>
+
+            </div>
+            <div class="form-row">
+                <labe class="form-label">Email:</labe>
+                <input asp-for="Email" class="form-input" type="email" placeholder="ex: email@gmail.com"></input>
+
+            </div>
+            <div class="form-row">
+                <label class="form-label">Mat Khau:</label>
+                <input asp-for="Password" class="form-input" type="password" id="password" placeholder="Nhập mật khẩu"></input>
+                <span class="invalid-feedback " style="margin: 0; ">Mật khẩu phải ít nhất 4 ký tự.</span>
+            </div>
+            <div class="form-row">
+                <label class="form-label">Xác Nhận MK:</label>
+                <input asp-for="ConfirmPassword" class="form-input" type="password" id="CFpassword" placeholder="Nhập lại mật khẩu" onchange="CheckPassword()"></input>
+                <span class="invalid-feedback " style="margin: 0; ">Mật khẩu ko trung.</span>
+
+            </div>
+            
+            <div class="form-row">
+                <input type="checkbox" id="showPassword">
+                <label for="showPassword">Hiện mật khẩu</label>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary mx-auto" id="loginButton"> Đăng Nhập</button>
+            </div>
+
+            <div style="max-width: max;" class="d-flex justify-content-evenly">
+
+                <a asp-action="Login">Đăng Nhập</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script>
+    var err = @ViewData["Error"];
+    if (err === "true") {
+
+    } else {
+        alert(err);
+    }
+
+    $(document).ready(function () {
+        $('#showPassword').on('change', function () {
+            if ($(this).is(':checked')) {
+                $('#password').attr('type', 'text');
+            } else {
+                $('#password').attr('type', 'password');
+            }
+        });
+    });
+
+    $('#password').on('input', function () {
+        if ($(this).val().length > 0) {
+            if ($(this).val().length < 4) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        }
+    });
+    $(document).ready(function () {
+        $("#password").keyup(function () {
+            var passwordLength = $(this).val().length;
+            if (passwordLength < 4) {
+                $("#loginButton").prop("disabled", true);
+            } else {
+                $("#loginButton").prop("disabled", false);
+            }
+        });
+    });
+
+    function CheckPassword() {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('CFpassword').value;
+
+        if (password === confirmPassword) {
+            document.getElementById('CFpassword').setCustomValidity('');
+        } else {
+            document.getElementById('CFpassword').setCustomValidity('Mật khẩu xác nhận không khớp');
+        }
+    }
+        /*
+    const imageInput = document.getElementById("ImageUrl");
+    imageInput.addEventListener("change", (e) => {
+        const ImageUrl = imageInput.Value;
+    })
+
+    const imageInput = document.getElementById('ImageUrl');
+    imageInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.addEventListener('load', (e) => {
+            const imgUrl = e.target.result;
+            const img = document.getElementById('imgPreview');
+            img.src = imgUrl;
+        });
+        reader.readAsDataURL(file);
+    });
+    */
+</script>

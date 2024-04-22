@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\Images\\71e8c4cff047f32b6edcef32c87de79_124.jpg"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Github_14.png",
+      "PackagePath": "staticwebassets\\Images\\Github_14.png"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Index.png",
       "PackagePath": "staticwebassets\\Images\\Index.png"
     },
@@ -211,6 +215,10 @@
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Screenshot 2024-03-21 185519.png",
       "PackagePath": "staticwebassets\\Images\\Screenshot 2024-03-21 185519.png"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Thiết kế trang chủ web tài liệu (figma)_15.png",
+      "PackagePath": "staticwebassets\\Images\\Thiết kế trang chủ web tài liệu (figma)_15.png"
     },
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Thong tin truyen.png",
@@ -231,6 +239,10 @@
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\ed0e10a0f37f24c6d8a621ce276a5b8_10a.jpg",
       "PackagePath": "staticwebassets\\Images\\ed0e10a0f37f24c6d8a621ce276a5b8_10a.jpg"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\index_1_14.png",
+      "PackagePath": "staticwebassets\\Images\\index_1_14.png"
     },
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\thong tin sach.png",
@@ -261,8 +273,20 @@
       "PackagePath": "staticwebassets\\file\\Báo-cáo-tuần-3.docx"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\DEMO CÔNG CỤ THIẾT KẾ GIAO DIỆN_14.docx",
+      "PackagePath": "staticwebassets\\file\\DEMO CÔNG CỤ THIẾT KẾ GIAO DIỆN_14.docx"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
       "PackagePath": "staticwebassets\\file\\Lab0_133.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133_14.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
+      "PackagePath": "staticwebassets\\file\\Lab0_133_14.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
+      "PackagePath": "staticwebassets\\file\\Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
     },
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2.docx",

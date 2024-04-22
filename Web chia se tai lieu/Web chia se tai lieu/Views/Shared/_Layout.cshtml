@@ -46,8 +46,21 @@
                 <button style="margin-left: 0;" class="btn btn-info" onclick="Search()"><i class="bi bi-search"></i></button>
                 
             </div>
-            <script>
+            
+            <div class="header__nav-upload">
+                @if(ViewData["userId"] == null)
+                {
+                    <button class="btn1" type="submit" onclick="NoLogin()"><i class="bi bi-upload"></i> Upload</button>
+                }else{
+                    <a style="text-decoration: none; color: black; font-style: normal;" asp-action="Upload" asp-controller="Home">
+                        <button class="btn1" type="submit"><i class="bi bi-upload"></i> Upload</button>
+                    </a>
+                }
+               
                 
+            </div>    
+            <script>
+
                 function Search() {
                     alert("Tesst");
                     var text = document.getElementById("search");
@@ -55,28 +68,28 @@
                     $.ajax({
                         url: "/Home/Search",
                         type: 'POST',
-                        data: {search},
+                        data: { search },
                         success: function () {
                             console.log("Hoan Thanh");
                         }
                     })
+                    function NoLogin() {
+                        alert("Phai dang nhap moi duoc up tai lieu");
+                    }
                 }
             </script>
-            <div class="header__nav-upload">
-                <button class="btn1" type="submit"><i class="bi bi-upload"></i> Upload</button>
-            </div>    
-
             <ul class="header__nav-list" styles="">
                 <li class="header__nav-item noitification">
                     <i class="bi bi-bell-fill ">Thong bao</i>
                 </li>
-                @if(ViewBag.User == null)
+                @if(ViewData["userId"] == null)
                 {
                     <li class="header__nav-item"><a class="tag-link text-color1" asp-action="Register">Dang Ky</a></li>
                     <li class="header__nav-item"><a class="tag-link text-color1" asp-action="Login">Dang Nhap</a></li>
                 }else{
+                    <li class="header__nav-item" style="background-color: none; padding: 0px 15px;">Coin: @ViewBag.User.Coin</li>
                     <li class="header__nav-item"> Xin Chào <a class="tag-link text-color1" asp-action="" title="Click vào để đi đến quản lý tài khoản">@ViewBag.User.Name</a></li>
-                    <li class="header__nav-item" style="margin-left: 20px;"><a class="tag-link text-color1" asp-action="Logout">Dang Nhap</a></li>
+                    <li class="header__nav-item" style="margin-left: 20px;"><a class="tag-link text-color1" asp-action="Logout">Dang Xuất</a></li>
                 }
                 
                 

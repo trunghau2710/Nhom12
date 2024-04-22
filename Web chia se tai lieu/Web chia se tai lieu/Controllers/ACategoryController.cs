@@ -21,7 +21,10 @@ namespace Web_chia_se_tai_lieu.Controllers
         {
             
                 List<Category> categories = _context.Categories.ToList();
-             
+                foreach(var category in categories)
+            {
+                category.NumberOfProduct = _context.Products.Where(p => p.CategoryId == category.Id).Count();
+            }
                 _context.SaveChanges();
                 return View(categories);
                    

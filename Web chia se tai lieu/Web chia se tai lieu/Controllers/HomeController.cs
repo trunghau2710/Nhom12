@@ -7,6 +7,7 @@ using System.Data.Entity;
 using Web_chia_se_tai_lieu.ViewModels;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Web_chia_se_tai_lieu.Controllers
 {
@@ -51,7 +52,7 @@ namespace Web_chia_se_tai_lieu.Controllers
             if (user != null)
             {
                 int id = user.Id;
-                HttpContext.Session.SetInt32("UserId", id);
+                HttpContext.Session.SetInt32("AdminId", id);
                 return RedirectToAction("Index");
             }
             else
@@ -108,6 +109,7 @@ namespace Web_chia_se_tai_lieu.Controllers
 
         public IActionResult Index()
         {
+            
             var categories = _context.Categories.ToList();
             categories.Sort((x, y) => x.Name.CompareTo(y.Name));
             
@@ -122,6 +124,8 @@ namespace Web_chia_se_tai_lieu.Controllers
 
             var id = HttpContext.Session.GetInt32("UserId");
             ViewBag.User = _context.Users.FirstOrDefault(p => p.Id == id);
+            if(id != null)
+                ViewData["userId"] = id;
             /*
             var productsfree = _context.Products.Where(p => p.Price == 0).ToList();
             ViewBag.Action_Free = productsfree.OrderByDescending(p => p.Downloads + p.Likes * 0.5 + p.Views * 0.1).Take(20).ToList();
@@ -206,7 +210,9 @@ namespace Web_chia_se_tai_lieu.Controllers
 
         public IActionResult Product(int? id, List<Product>? products)
         {
-            if(HttpContext.Session.GetInt32("UserId") != null)
+            var Id = HttpContext.Session.GetInt32("UserId");
+            ViewBag.User = _context.Users.FirstOrDefault(p => p.Id == Id);
+            if (HttpContext.Session.GetInt32("UserId") != null)
                 ViewData["userId"] = (int)HttpContext.Session.GetInt32("UserId");
             LoadCategories();
             var categories = _context.Categories.ToList();
@@ -328,6 +334,8 @@ namespace Web_chia_se_tai_lieu.Controllers
 
         public IActionResult Detail (int id)
         {
+            var Id = HttpContext.Session.GetInt32("UserId");
+            ViewBag.User = _context.Users.FirstOrDefault(p => p.Id == Id);
             if (HttpContext.Session.GetInt32("UserId") != null)
                 ViewData["userId"] = (int)HttpContext.Session.GetInt32("UserId");
             var product = _context.Products.FirstOrDefault(p => p.Id == id);
@@ -420,6 +428,93 @@ namespace Web_chia_se_tai_lieu.Controllers
                 int Id = -1;
             
             return RedirectToAction("Product",new { id =Id, products = products1});
+        }
+
+        public IActionResult UpLoad()
+        {
+            var id = HttpContext.Session.GetInt32("UserId");
+            ViewBag.User = _context.Users.FirstOrDefault(p => p.Id == id);
+            if (HttpContext.Session.GetInt32("UserId") != null)
+                ViewData["userId"] = (int)HttpContext.Session.GetInt32("UserId");
+            var categories = _context.Categories.ToList();
+            categories.Sort((x, y) => x.Name.CompareTo(y.Name));
+            ViewBag.Categories = categories;
+            
+            ViewBag.Categories_add = new SelectList(categories, "Id", "Name");
+            return View();
+        }
+        public int GetIdProduct()
+        {
+            int i = 0;
+            foreach (var x in _context.Products)
+                i = x.Id;
+            return i;
+        }
+
+        [HttpPost]
+        public IActionResult Upload(Product product, IFormFile FileUrl, IFormFile ImageUrl)
+        { //Ham ModelState se kiem tra lai du lieu cua Model duoc truyen tu view qua
+          //Ta chi truyen FIle anh vs file qua 2 bien FileUrl ... con model.FileUrl vs cac bien con lai thi chua nhan duoc nen can phai bo kiem tra
+
+            ModelState.Remove("File");
+            ModelState.Remove("FileImage");
+            ModelState.Remove("Category");
+            ModelState.Remove("User");
+
+            int id = GetIdProduct() + 1;
+
+            if (ImageUrl != null)
+            {
+                product.FileImage = SaveImage(ImageUrl, id);
+            }
+            if (FileUrl != null)
+            {
+                product.File = SaveFile(FileUrl, id);
+                product.TypeFile = Path.GetExtension(FileUrl.FileName);
+            }
+            if (ModelState.IsValid)
+            {
+                product.User = _context.Users.FirstOrDefault(p => p.Id == 1);
+                product.Status = "No Confirm";
+                product.UserId = (int)HttpContext.Session.GetInt32("UserId");
+                product.Views = 0;
+                product.Likes = 0;
+                product.Downloads = 0;
+                product.TimeCreate = DateTime.Now;
+                User user = _context.Users.FirstOrDefault(p=> p.Id == product.UserId);
+                user.Coin = user.Coin + 10;
+                _context.Users.Update(user);
+                _context.Products.Add(product);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var categories = _context.Categories.ToList();
+            ViewBag.categories = new SelectList(categories, "Id", "Name");
+            return RedirectToAction(nameof(Index));
+
+
+        }
+        public string SaveImage(IFormFile Image, int id)
+        {
+            int index = Image.FileName.IndexOf(".");
+            var filename = Image.FileName.Insert(index, "_" + id.ToString());
+            var savePath = Path.Combine("wwwroot/Images", filename);
+            using (var fileStream = new FileStream(savePath, FileMode.Create))
+            {
+                Image.CopyTo(fileStream);
+            }
+            return "/Images/" + filename;
+        }
+        public string SaveFile(IFormFile FileUrl, int id)
+        {
+            int index = FileUrl.FileName.IndexOf(".");
+            var filename = FileUrl.FileName.Insert(index, "_" + id.ToString());
+            var savePath = Path.Combine("wwwroot/file", filename);
+            using (var fileStream = new FileStream(savePath, FileMode.Create))
+            {
+                FileUrl.CopyTo(fileStream);
+            }
+            return "/file/" + filename;
         }
 
 

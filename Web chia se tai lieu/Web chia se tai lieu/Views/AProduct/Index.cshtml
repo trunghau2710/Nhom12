@@ -60,6 +60,7 @@
                     @if (item.Status == "Đã Duyệt" || item.Status == "Confirmed")
                     {
                         <a asp-action="Delete" asp-route-id="@item.Id" class="text-decoration-none" onclick="conFirm (event);">Delete</a>
+                        <a asp-action="Update" asp-route-id="@item.Id" class="text-decoration-none" >Update</a>
                     }
                     else
                     {
@@ -100,7 +101,7 @@
                     breadk;
 
             }
-            alert("ssa");
+
            
             
         </script>

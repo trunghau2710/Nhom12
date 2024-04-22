@@ -63,8 +63,16 @@
         </div>
 
         <div>
-            <div class="comment">
-            </div>
+            @if (ViewData["userId"] == null)
+            {
+                <div style="min-width: 720px; text-align:center">Vui Long Dang Nhap De Binh Luan</div>
+            }
+            else
+            {
+                <div class="comment">
+                </div>
+            }
+            
             <div id="my-element" class="list-comment"></div>
         </div>
     </div>

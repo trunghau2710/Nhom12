@@ -1,0 +1,95 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Web_chia_se_tai_lieu.Models.Product;
+
+<script src="/lib/jquery/dist/jquery.js"></script>
+<link href="/css/style.css" rel="stylesheet" />
+
+<div class="page">
+    <h2 style="margin: 20px auto;">Add Product</h2>
+    <form asp-action="Upload" method="post" enctype="multipart/form-data">
+
+        <div>
+            <input type="hidden" asp-for="Status" />
+            <input type="hidden" asp-for="Downloads" />
+            <input type="hidden" asp-for="Views" />
+            <input type="hidden" asp-for="Likes" />
+            <input type="hidden" asp-for="TimePost" />
+            <input type="hidden" asp-for="TimeCreate" />
+        </div>
+
+        <div class="row">
+            <label asp-for="Name">Ten San Pham: </label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="row">
+            <label asp-for="Description">Mô tả </label>
+            <textarea type="text" asp-for="Description" class="form-control"></textarea>
+        </div>
+        <div class="row">
+            <label asp-for="Price">Giá: </label>
+            <input type="number" asp-for="Price" class="form-control" />
+        </div>
+        <div class="row">
+            <label asp-for="CategoryId">Danh Muc: </label>
+            <select asp-for="CategoryId" asp-items="ViewBag.Categories_add" class="form-control"></select>
+        </div>
+        <div class="row">
+            <label asp-for="FileImage">File ảnh đại diện </label>
+            <input type="file" name="ImageUrl" id="ImageUrl" class="form-control" />
+            <img id="imgPreview" style="max-width: 100px;margin: 10px 0" />
+
+        </div>
+        <div class="row">
+            <label asp-for="File">File Tài Liệu </label>
+            <input type="file" name="FileUrl" id="FileUrl" class="form-control" />
+            <span asp-validation-for="File" class="form-control"></span>
+
+        </div>
+        <button type="submit" class="btn btn-success">Đăng</button>
+
+    </form>
+    <script>
+
+        const imageInput = document.getElementById("ImageUrl");
+        imageInput.addEventListener("change", (e) => {
+            const ImageUrl = imageInput.Value;
+        })
+        const FileInput = document.getElementById("FileUrl");
+        FileInput.addEventListener("change", (e) => {
+            const FileUrl = FileInput.Value;
+        })
+
+
+
+        const fileInput = document.getElementById('ImageUrl');
+
+        // Thêm event listener cho sự kiện change
+        fileInput.addEventListener('change', (e) => {
+            // Lấy file được chọn
+            const file = e.target.files[0];
+
+            // Khởi tạo FileReader
+            const reader = new FileReader();
+
+            // Thêm event listener cho sự kiện load
+            reader.addEventListener('load', (e) => {
+                // Lấy URL của ảnh
+                const imgUrl = e.target.result;
+
+                // Hiển thị ảnh
+                const img = document.getElementById('imgPreview');
+                img.src = imgUrl;
+            });
+
+            // Đọc file
+            reader.readAsDataURL(file);
+        });
+    </script>
+
+
+</div>
