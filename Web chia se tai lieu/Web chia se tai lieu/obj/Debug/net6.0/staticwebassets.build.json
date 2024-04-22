@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zLAHE5zIf880gpeekQBkGQKvheSFOoDkcF5RtZFb56A=",
+  "Hash": "KSQ7/KsWcYQDDDgWwIwMsV0TOiCpvDMg+JBe04dBQ1g=",
   "Source": "Web chia se tail ieu",
   "BasePath": "_content/Web chia se tail ieu",
   "Mode": "Default",
@@ -986,6 +986,23 @@
       "OriginalItemSpec": "wwwroot\\file\\Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
     },
     {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2 (1)_16.pdf",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "file/Nội dung tóm tắt tuần 2 (1)_16.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\file\\Nội dung tóm tắt tuần 2 (1)_16.pdf"
+    },
+    {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2.docx",
       "SourceId": "Web chia se tail ieu",
       "SourceType": "Discovered",
@@ -1256,6 +1273,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Noi dung.png"
+    },
+    {
+      "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\sach-harry-potter-cua-j-k-rowling2_16.jpg",
+      "SourceId": "Web chia se tail ieu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\",
+      "BasePath": "_content/Web chia se tail ieu",
+      "RelativePath": "Images/sach-harry-potter-cua-j-k-rowling2_16.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\sach-harry-potter-cua-j-k-rowling2_16.jpg"
     },
     {
       "Identity": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\Screenshot 2024-03-21 185519.png",

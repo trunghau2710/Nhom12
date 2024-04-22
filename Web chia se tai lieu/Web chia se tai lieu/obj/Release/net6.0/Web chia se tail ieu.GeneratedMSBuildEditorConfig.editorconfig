@@ -1,0 +1,121 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Web_chia_se_tai_lieu
+build_property.RootNamespace = Web_chia_se_tai_lieu
+build_property.ProjectDir = D:\GitHub\Nhom12\Web chia se tai lieu\Web chia se tai lieu\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\GitHub\Nhom12\Web chia se tai lieu\Web chia se tai lieu
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/ACategory/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUNhdGVnb3J5XEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/ACategory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUNhdGVnb3J5XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/ACategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUNhdGVnb3J5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/ACategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUNhdGVnb3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/AProduct/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVByb2R1Y3RcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/AProduct/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVByb2R1Y3RcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/AProduct/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVByb2R1Y3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/AProduct/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVByb2R1Y3RcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/AProduct/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVByb2R1Y3RcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/AProduct/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVByb2R1Y3RcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Home/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Home/homePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxob21lUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Home/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Home/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Home/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Home/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Shared/_commentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9jb21tZW50UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Shared/_Layout1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Shared/_listcommentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9saXN0Y29tbWVudFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Shared/_pagePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYWdlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Shared/_productPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wcm9kdWN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Nhom12/Web chia se tai lieu/Web chia se tai lieu/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hztt3a4djp

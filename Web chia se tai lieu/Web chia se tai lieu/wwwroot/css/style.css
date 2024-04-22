@@ -1,4 +1,4 @@
-* {
+﻿* {
     font-family: aria;
     font-size: 16px;
     text-decoration: none;
@@ -545,14 +545,55 @@
     margin-bottom: 20px;
 }
 
-.footer {
-    background-color: #000;
-    width: max;
-    height: 100px;
-    margin-top: 50px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
+/* Footer */
+.container-fluid.bg-dark.text-white-50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-placeholder {
+    height: 150px; /* Điều chỉnh chiều cao cho footer */
+}
+
+.navbar-brand .logo-img {
+    max-width: 100px; /* Điều chỉnh kích thước logo */
+}
+
+/* Follow Us section */
+.d-flex.justify-content-start .btn-outline-primary {
+    margin-right: 10px; /* Điều chỉnh khoảng cách giữa các nút mạng xã hội */
+}
+
+/* Links section */
+.d-flex.flex-column.justify-content-start a {
+    color: rgba(256, 256, 256, 0.7); /* Màu văn bản cho các liên kết */
+    margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các liên kết */
+}
+
+    .d-flex.flex-column.justify-content-start a:hover {
+        color: #fff; /* Màu văn bản khi di chuột qua các liên kết */
+    }
+
+/* Contact Us section */
+.text-white-50 {
+    margin-bottom: 15px; /* Điều chỉnh khoảng cách giữa các mục thông tin liên hệ */
+}
+
+/* Newsletter section */
+.input-group {
+    margin-top: 15px; /* Điều chỉnh khoảng cách giữa input và nút */
+}
+
+/* Designed by section */
+.text-white-50 a {
+    color: rgba(256, 256, 256, 0.7); /* Màu văn bản cho liên kết "Designed by" */
+}
+
+    .text-white-50 a:hover {
+        color: #fff; /* Màu văn bản khi di chuột qua liên kết "Designed by" */
+    }
+
+#0056b3; /* Màu của biểu tượng khi di chuột qua */
 }
 /*------------------------------------------------- PRODUCT -------------------------------------------------------*/
 .page-product {

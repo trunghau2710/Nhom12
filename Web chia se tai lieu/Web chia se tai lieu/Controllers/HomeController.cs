@@ -52,7 +52,7 @@ namespace Web_chia_se_tai_lieu.Controllers
             if (user != null)
             {
                 int id = user.Id;
-                HttpContext.Session.SetInt32("AdminId", id);
+                HttpContext.Session.SetInt32("UserId", id);
                 return RedirectToAction("Index");
             }
             else

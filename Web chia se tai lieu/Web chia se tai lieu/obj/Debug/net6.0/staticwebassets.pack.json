@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\Images\\index_1_14.png"
     },
     {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\sach-harry-potter-cua-j-k-rowling2_16.jpg",
+      "PackagePath": "staticwebassets\\Images\\sach-harry-potter-cua-j-k-rowling2_16.jpg"
+    },
+    {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\Images\\thong tin sach.png",
       "PackagePath": "staticwebassets\\Images\\thong tin sach.png"
     },
@@ -287,6 +291,10 @@
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf",
       "PackagePath": "staticwebassets\\file\\Lab0_133_15.WebBanVali Core MVC5 (Sanpham&ChitietSP).pdf"
+    },
+    {
+      "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2 (1)_16.pdf",
+      "PackagePath": "staticwebassets\\file\\Nội dung tóm tắt tuần 2 (1)_16.pdf"
     },
     {
       "Id": "D:\\GitHub\\Nhom12\\Web chia se tai lieu\\Web chia se tai lieu\\wwwroot\\file\\Nội dung tóm tắt tuần 2.docx",
